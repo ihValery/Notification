@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct DesignButton: View {
-    
-    private var contentView = ContentView()
+//    @ObservedObject
+    var notificationManager = LocalNotificationManager()
     
     var body: some View {
-        Button(action: {  }) {
+        Button(action: {
+            notificationManager.sceduleNotification(notificationType: "Мое четвертое уведомление")
+        }) {
             HStack {
                 Text("Установить")
                     .padding(.horizontal)

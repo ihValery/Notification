@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var currentDate = Date()
-    var notificationCenter = LocalNotificationManager()
+    @Environment(\.scenePhase) private var scenePhase
     
     var body: some View {
         VStack {
@@ -18,7 +18,7 @@ struct ContentView: View {
                 .fontWeight(.light)
             DatePicker("Время", selection: $currentDate, in: Date()...)
                 .datePickerStyle(GraphicalDatePickerStyle())
-//                .labelsHidden()
+                .labelsHidden()
             DesignButton()
             Text("Выбранное время:\n\(currentDate)")
                 .fontWeight(.light)
@@ -28,10 +28,11 @@ struct ContentView: View {
         }
         .font(.largeTitle)
         .padding()
-    }
-    
-    func setNotification() {
-        notificationCenter.requestPermission()
+        .onChange(of: scenePhase) { phase in
+            if phase == .active {
+                UIApplication.shared.applicationIconBadgeNumber = 0
+            }
+        }
     }
 }
 

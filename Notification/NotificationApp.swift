@@ -17,6 +17,7 @@ struct NotificationApp: App {
             ContentView()
                 .onAppear {
                     notificationCenter.requestPermission()
+//                    UIApplication.shared.applicationIconBadgeNumber = 0
                 }
         }
     }

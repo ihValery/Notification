@@ -12,7 +12,6 @@
 		80422A6C2649940100177915 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80422A6B2649940100177915 /* NotificationView.swift */; };
 		80422A6E2649940400177915 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80422A6D2649940400177915 /* Assets.xcassets */; };
 		80422A712649940400177915 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80422A702649940400177915 /* Preview Assets.xcassets */; };
-		8060369B264B219E00290694 /* ReminderMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8060369A264B219E00290694 /* ReminderMessage.swift */; };
 		8060369E264B24B600290694 /* ButtonSetNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8060369D264B24B600290694 /* ButtonSetNotification.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +23,6 @@
 		80422A6D2649940400177915 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80422A702649940400177915 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		80422A722649940400177915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8060369A264B219E00290694 /* ReminderMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderMessage.swift; sourceTree = "<group>"; };
 		8060369D264B24B600290694 /* ButtonSetNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSetNotification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				80422A692649940100177915 /* MainApp.swift */,
-				80603699264B215700290694 /* Model */,
 				80603698264B214B00290694 /* View */,
 				80603697264B213400290694 /* NotificationManager */,
 				8060369C264B225C00290694 /* System32 */,
@@ -90,14 +87,6 @@
 				8060369D264B24B600290694 /* ButtonSetNotification.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		80603699264B215700290694 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				8060369A264B219E00290694 /* ReminderMessage.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		8060369C264B225C00290694 /* System32 */ = {
@@ -183,7 +172,6 @@
 				80422A6C2649940100177915 /* NotificationView.swift in Sources */,
 				802355AE264AD56E0044CFB6 /* NotificationManager.swift in Sources */,
 				80422A6A2649940100177915 /* MainApp.swift in Sources */,
-				8060369B264B219E00290694 /* ReminderMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

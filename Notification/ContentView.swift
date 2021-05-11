@@ -11,8 +11,7 @@ struct ContentView: View {
     
     @State private var currentDate = Date()
     @Environment(\.scenePhase) private var scenePhase
-//    @State private var showFootNote = false
-    private var notificationManager = LocalNotificationManager()
+    private var notificationManager = NotificationHandler()
     
     var body: some View {
         VStack {
@@ -36,18 +35,12 @@ struct ContentView: View {
                     RoundedRectangle(cornerRadius: 13)
                         .stroke(Color.blue, lineWidth: 2))
             }
-//            if showFootNote {
-//                Text("Уведомление придет через 5 сек")
-//                    .font(.footnote)
-//            }
         }
         .font(.largeTitle)
         .padding()
         .onChange(of: scenePhase) { phase in
             if phase == .active {
                 UIApplication.shared.applicationIconBadgeNumber = 0
-                
-//                showFootNote = false
             }
         }
     }

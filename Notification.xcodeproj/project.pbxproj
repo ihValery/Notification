@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		802355AE264AD56E0044CFB6 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802355AD264AD56E0044CFB6 /* NotificationHandler.swift */; };
 		80422A6A2649940100177915 /* NotificationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80422A692649940100177915 /* NotificationApp.swift */; };
 		80422A6C2649940100177915 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80422A6B2649940100177915 /* ContentView.swift */; };
 		80422A6E2649940400177915 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80422A6D2649940400177915 /* Assets.xcassets */; };
 		80422A712649940400177915 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80422A702649940400177915 /* Preview Assets.xcassets */; };
-		80422A79264994A100177915 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80422A78264994A100177915 /* LocalNotificationManager.swift */; };
 		80422A7B264994E200177915 /* DesignButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80422A7A264994E200177915 /* DesignButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		802355AD264AD56E0044CFB6 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		80422A662649940100177915 /* Notification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80422A692649940100177915 /* NotificationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationApp.swift; sourceTree = "<group>"; };
 		80422A6B2649940100177915 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		80422A6D2649940400177915 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80422A702649940400177915 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		80422A722649940400177915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		80422A78264994A100177915 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		80422A7A264994E200177915 /* DesignButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,11 +57,11 @@
 			isa = PBXGroup;
 			children = (
 				80422A692649940100177915 /* NotificationApp.swift */,
+				802355AD264AD56E0044CFB6 /* NotificationHandler.swift */,
 				80422A6B2649940100177915 /* ContentView.swift */,
-				80422A78264994A100177915 /* LocalNotificationManager.swift */,
-				80422A7A264994E200177915 /* DesignButton.swift */,
 				80422A6D2649940400177915 /* Assets.xcassets */,
 				80422A722649940400177915 /* Info.plist */,
+				80422A7A264994E200177915 /* DesignButton.swift */,
 				80422A6F2649940400177915 /* Preview Content */,
 			);
 			path = Notification;
@@ -144,8 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80422A79264994A100177915 /* LocalNotificationManager.swift in Sources */,
 				80422A6C2649940100177915 /* ContentView.swift in Sources */,
+				802355AE264AD56E0044CFB6 /* NotificationHandler.swift in Sources */,
 				80422A6A2649940100177915 /* NotificationApp.swift in Sources */,
 				80422A7B264994E200177915 /* DesignButton.swift in Sources */,
 			);

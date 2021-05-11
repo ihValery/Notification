@@ -9,10 +9,14 @@ import SwiftUI
 
 struct DesignButton: View {
     
-    private var contentView = ContentView()
+    var notificationManager = LocalNotificationManager()
+    var contentView = ContentView()
     
     var body: some View {
-        Button(action: {  }) {
+        Button(action: {
+//            notificationManager
+//                .sceduleNotification(notificationType: "\(contentView.currentDate)")
+        }) {
             HStack {
                 Text("Установить")
                     .padding(.horizontal)
@@ -35,19 +39,19 @@ struct DesignButton_Previews: PreviewProvider {
 }
 
 /*
-//Кастомизация кнопки огранченна лишь фантазией -> вызов через .buttonStyle()
-//Анимацию и другие плюшки берешь на себя
-struct CustomButton: ButtonStyle {
-    
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 50)
-            .foregroundColor(.blue)
-            .overlay(
-                RoundedRectangle(cornerRadius: 13)
-                    .stroke(Color.blue, lineWidth: 2))
-            .opacity(configuration.isPressed ? 0.3 : 1)
-            .scaleEffect(configuration.isPressed ? 0.99 : 1)
-    }
-}
-*/
+ //Кастомизация кнопки огранченна лишь фантазией -> вызов через .buttonStyle()
+ //Анимацию и другие плюшки берешь на себя
+ struct CustomButton: ButtonStyle {
+ 
+ func makeBody(configuration: Configuration) -> some View {
+ configuration.label
+ .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 50)
+ .foregroundColor(.blue)
+ .overlay(
+ RoundedRectangle(cornerRadius: 13)
+ .stroke(Color.blue, lineWidth: 2))
+ .opacity(configuration.isPressed ? 0.3 : 1)
+ .scaleEffect(configuration.isPressed ? 0.99 : 1)
+ }
+ }
+ */

@@ -1,15 +1,15 @@
 //
-//  NotificationHandler.swift
+//  NotificationManager.swift
 //  Notification
 //
 //  Created by Валерий Игнатьев on 11.05.21.
 //
 
-import Foundation
+import SwiftUI
 import NotificationCenter
 
-class NotificationHandler: NSObject, UNUserNotificationCenterDelegate {
-    static let shared = NotificationHandler()
+class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
+    static let shared = NotificationManager()
     private let center = UNUserNotificationCenter.current()
     
     /** Handle notification when app is in background */
@@ -25,9 +25,10 @@ class NotificationHandler: NSObject, UNUserNotificationCenterDelegate {
     }
 }
 
-extension NotificationHandler {
+extension NotificationManager {
     /// Проверка настроек (ведь пользователь может потом запретить).
-    func getNotification() {
+    /// onDenied handler: Позволяет передать замыкание для его обработки, когда уведомление не включено в настройках устройства пользователя.
+    func getNotification(onDenied handler: (() -> Void)? = nil) {
         
         center.getNotificationSettings { settings in
             switch settings.authorizationStatus {
@@ -36,6 +37,7 @@ extension NotificationHandler {
                     self.requestPermission()
                 case .denied:
                     print("Приложение не авторизовано для планирования или получения уведомлений.")
+                    if let handler = handler { handler() }
                 case .authorized:
                     print("Приложение авторизовано для получения уведомлений.")
                 case .provisional:
@@ -58,7 +60,7 @@ extension NotificationHandler {
     }
     
     ///Создание содержимого для локального уведомления
-    func sceduleNotification(notificationType: String) {
+    func sceduleNotification(notificationType: String, date: Date) {
         let content = UNMutableNotificationContent()
         
         content.title = notificationType
@@ -66,7 +68,9 @@ extension NotificationHandler {
         content.sound = UNNotificationSound.default
         content.badge = 1
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let currDate = dateForAlarm(date: date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: currDate, repeats: false)
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         
         //Вызов .add с тем же identifire заменит уведомление
@@ -75,5 +79,9 @@ extension NotificationHandler {
                 print("Ошибка: \(error.localizedDescription)")
             }
         }
+    }
+    
+    func dateForAlarm(date: Date) -> DateComponents {
+        return Calendar.current.dateComponents([.hour, .minute], from: date)
     }
 }

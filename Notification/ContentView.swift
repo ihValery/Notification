@@ -45,7 +45,7 @@ struct ContentView: View {
         .padding()
         .onChange(of: scenePhase) { phase in
             if phase == .active {
-                UIApplication.shared.applicationIconBadgeNumber = 0
+                UIApplication.shared.applicationIconBadgeNumber -= 1
                 
 //                showFootNote = false
             }

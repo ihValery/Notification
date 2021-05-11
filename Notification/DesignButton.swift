@@ -4,7 +4,7 @@
 //
 //  Created by Валерий Игнатьев on 10.05.21.
 //
-
+/*
 import SwiftUI
 
 struct DesignButton: View {
@@ -37,6 +37,7 @@ struct DesignButton_Previews: PreviewProvider {
             .previewLayout(.sizeThatFits)
     }
 }
+*/
 
 /*
  //Кастомизация кнопки огранченна лишь фантазией -> вызов через .buttonStyle()

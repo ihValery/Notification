@@ -11,6 +11,8 @@ struct ContentView: View {
     
     @State private var currentDate = Date()
     @Environment(\.scenePhase) private var scenePhase
+//    @State private var showFootNote = false
+    private var notificationManager = LocalNotificationManager()
     
     var body: some View {
         VStack {
@@ -19,21 +21,38 @@ struct ContentView: View {
             DatePicker("Время", selection: $currentDate, in: Date()...)
                 .datePickerStyle(GraphicalDatePickerStyle())
                 .labelsHidden()
-            DesignButton()
-            Text("Выбранное время:\n\(currentDate)")
-                .fontWeight(.light)
-                .font(.subheadline)
-                .padding(.top)
-                .multilineTextAlignment(.leading)
+            Button(action: {
+                notificationManager
+                    .sceduleNotification(notificationType: "\(currentDate)")
+            }) {
+                HStack {
+                    Text("Установить")
+                        .padding(.horizontal)
+                    Image(systemName: "timer")
+                }
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 50)
+                .foregroundColor(.blue)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 13)
+                        .stroke(Color.blue, lineWidth: 2))
+            }
+//            if showFootNote {
+//                Text("Уведомление придет через 5 сек")
+//                    .font(.footnote)
+//            }
         }
         .font(.largeTitle)
         .padding()
         .onChange(of: scenePhase) { phase in
             if phase == .active {
                 UIApplication.shared.applicationIconBadgeNumber = 0
+                
+//                showFootNote = false
             }
         }
     }
+    
+
 }
 
 struct ContentView_Previews: PreviewProvider {

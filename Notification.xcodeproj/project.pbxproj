@@ -13,6 +13,8 @@
 		80422A6E2649940400177915 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80422A6D2649940400177915 /* Assets.xcassets */; };
 		80422A712649940400177915 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80422A702649940400177915 /* Preview Assets.xcassets */; };
 		8060369E264B24B600290694 /* ButtonSetNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8060369D264B24B600290694 /* ButtonSetNotification.swift */; };
+		806036A4264B3B1100290694 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806036A3264B3B1100290694 /* Color.swift */; };
+		806036A6264B3C2B00290694 /* LightButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806036A5264B3C2B00290694 /* LightButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		80422A702649940400177915 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		80422A722649940400177915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8060369D264B24B600290694 /* ButtonSetNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSetNotification.swift; sourceTree = "<group>"; };
+		806036A3264B3B1100290694 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		806036A5264B3C2B00290694 /* LightButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 				80422A692649940100177915 /* MainApp.swift */,
 				80603698264B214B00290694 /* View */,
 				80603697264B213400290694 /* NotificationManager */,
+				806036A2264B3AFB00290694 /* Color */,
 				8060369C264B225C00290694 /* System32 */,
 			);
 			path = Notification;
@@ -97,6 +102,15 @@
 				80422A6F2649940400177915 /* Preview Content */,
 			);
 			path = System32;
+			sourceTree = "<group>";
+		};
+		806036A2264B3AFB00290694 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				806036A3264B3B1100290694 /* Color.swift */,
+				806036A5264B3C2B00290694 /* LightButtonStyle.swift */,
+			);
+			path = Color;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +185,8 @@
 				8060369E264B24B600290694 /* ButtonSetNotification.swift in Sources */,
 				80422A6C2649940100177915 /* NotificationView.swift in Sources */,
 				802355AE264AD56E0044CFB6 /* NotificationManager.swift in Sources */,
+				806036A4264B3B1100290694 /* Color.swift in Sources */,
+				806036A6264B3C2B00290694 /* LightButtonStyle.swift in Sources */,
 				80422A6A2649940100177915 /* MainApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

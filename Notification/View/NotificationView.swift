@@ -11,40 +11,47 @@ struct NotificationView: View {
     
     @State private var currentDate = Date()
     @State private var toShowAlert = false
+    @State private var textTitle = ""
     @Environment(\.scenePhase) private var scenePhase
     
     var body: some View {
-        VStack {
-            Text("Когда напомнить?")
-                .fontWeight(.light)
-            DatePicker("Время", selection: $currentDate, in: Date()...)
-                .datePickerStyle(GraphicalDatePickerStyle())
-                .labelsHidden()
-            ButtonSetNotification(date: currentDate)
-        }
-        .font(.largeTitle)
-        .padding()
-        
-        .onChange(of: scenePhase) { phase in
-            if phase == .active {
-                UIApplication.shared.applicationIconBadgeNumber = 0
+        ZStack {
+            Color.offWhite
+            VStack {
+                Text("Когда напомнить?")
+                    .fontWeight(.light)
+                TextField("о чем напомнить?", text: $textTitle)
+                    .font(.subheadline)
+                DatePicker("Время", selection: $currentDate, in: Date()...)
+                    .datePickerStyle(GraphicalDatePickerStyle())
+                    .labelsHidden()
+                ButtonSetNotification(date: currentDate, text: textTitle)
             }
-        }
-        
-        .onAppear {
-            NotificationManager.shared.getNotification {
-                toShowAlert.toggle()
+            .font(.largeTitle)
+            .padding()
+            
+            .onChange(of: scenePhase) { phase in
+                if phase == .active {
+                    UIApplication.shared.applicationIconBadgeNumber = 0
+                }
             }
-        }
-        
-        .alert(isPresented: $toShowAlert, content: {
-            Alert(title: Text("Уведомление отключено для этого приложения"),
-                  message: Text("Пожалуйста, перейдите в настройки, чтобы включить его сейчас"),
-                  primaryButton: .default(Text("Открыть настройки")) {
-                    goToSettings()
-                  },
-                  secondaryButton: .cancel())
+            
+            .onAppear {
+                NotificationManager.shared.getNotification {
+                    toShowAlert.toggle()
+                }
+            }
+            
+            .alert(isPresented: $toShowAlert, content: {
+                Alert(title: Text("Уведомление отключено для этого приложения"),
+                      message: Text("Пожалуйста, перейдите в настройки, чтобы включить его сейчас"),
+                      primaryButton: .default(Text("Открыть настройки")) {
+                        goToSettings()
+                      },
+                      secondaryButton: .cancel())
         })
+        }
+        .ignoresSafeArea(.all, edges: .all)
     }
 }
 

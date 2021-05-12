@@ -6,4 +6,4 @@
 - ScenePhase - жизненый цикл SwiftUI
 - Реализация UNUserNotificationCenterDelegate без AppDelegate в SwiftUI
 
-<img src="https://github.com/ihValery/Notification/blob/main/GinHub_preview_1900.png?raw=true"></a>
+<img src="https://github.com/ihValery/Notification/blob/main/Notification.png?raw=true"></a>

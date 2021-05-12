@@ -22,11 +22,7 @@ struct ButtonSetNotification: View {
                 Image(systemName: "timer")
             }
             .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 10)
-//            .frame(minHeight: 0, maxHeight: 50)
-            .foregroundColor(.blue)
-//            .overlay(
-//                RoundedRectangle(cornerRadius: 13)
-//                    .stroke(Color.blue, lineWidth: 2))
+            .foregroundColor(.lightStart)
         }
         .buttonStyle(LightButtonStyle())
     }

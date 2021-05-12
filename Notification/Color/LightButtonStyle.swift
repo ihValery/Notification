@@ -14,7 +14,7 @@ struct LightButtonStyle: ButtonStyle {
             .padding(30)
             .contentShape(RoundedRectangle(cornerRadius: 25))
             .background(LightBackground(isHiglighed: configuration.isPressed, shape: RoundedRectangle(cornerRadius: 25)))
-//            .animation(nil)
+            .animation(nil)
     }
 }
 
@@ -27,7 +27,7 @@ struct LightBackground<S: Shape>: View {
         ZStack {
             if isHiglighed {
               shape
-                .fill(Color.offWhite)
+                .fill(Color.colorScheme)
                 .overlay(
                     shape
                         .stroke(Color.gray, lineWidth: 4)
@@ -42,9 +42,8 @@ struct LightBackground<S: Shape>: View {
                         .mask(RoundedRectangle(cornerRadius: 25).fill(LinearGradient(Color.clear, Color.black))))
             } else {
                 shape
-                    .fill(Color.offWhite)
-                    .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
-                    .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
+                    .fill(Color.colorScheme)
+                    .shadowNeomorphism()
             }
         }
     }

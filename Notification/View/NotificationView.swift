@@ -16,15 +16,23 @@ struct NotificationView: View {
     
     var body: some View {
         ZStack {
-            Color.offWhite
+            Color.colorScheme
             VStack {
                 Text("Когда напомнить?")
                     .fontWeight(.light)
+                    .shadowNeomorphism()
+                
                 TextField("о чем напомнить?", text: $textTitle)
                     .font(.subheadline)
+                    .shadowNeomorphism()
+                
                 DatePicker("Время", selection: $currentDate, in: Date()...)
+                    .shadowNeomorphism()
+                    
                     .datePickerStyle(GraphicalDatePickerStyle())
                     .labelsHidden()
+                    .shadowNeomorphism()
+                
                 ButtonSetNotification(date: currentDate, text: textTitle)
             }
             .font(.largeTitle)
